@@ -1,0 +1,825 @@
+<?php
+date_default_timezone_set('Asia/Kolkata'); 
+$db = mysqli_connect('localhost','u623209347_jpsbangalore','x6|9GynQ~','u623209347_jpsbangalore');
+if(count($_POST)>0) {
+
+$name =$_POST['name'] ;
+$mobile =$_POST['mobile'] ;
+$email =$_POST['email'] ;
+$message =$_POST['message'] ;
+$created_at = date('Y-m-d');
+
+$name1 =filter_var($name,    FILTER_SANITIZE_STRING);
+$mobile1 =filter_var($mobile,    FILTER_SANITIZE_STRING);
+$email1 =filter_var($email,    FILTER_SANITIZE_STRING);
+$message1 =filter_var($message,    FILTER_SANITIZE_STRING);
+mysqli_query($db, "INSERT INTO `users`( `name`, `mobile`, `email`, `message`,  `created_at`) VALUES ('$name1','$mobile1','$email1','$message1','$created_at')");
+} 
+
+?>
+<?php
+// the message
+$msg = '<tr bgcolor="#eeffee"><td><b>JPS Contact Form Leads</b></td><td></td></tr>'.'<tr bgcolor="#eeffee"><td>Name</td><td>'.print_r($_POST['name'],true).'</td></tr>'.'<tr bgcolor="#eeffee"><td>Email</td><td>'.print_r($_POST['email'],true).'</td></tr>'.'<tr bgcolor="#eeffee"><td>Mobile</td><td>'.print_r($_POST['mobile'],true).'</td></tr>'.'<tr bgcolor="#eeffee"><td>Message</td><td>'.print_r($_POST['message'],true).'</td></tr>'
+.'<tr bgcolor="#eeffee"><td>Date</td><td>'.print_r($created_at,true).'</td></tr>';
+// use wordwrap() if lines are longer than 70 characters
+$msg = wordwrap($msg,70);
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// send email
+mail("contactjps.bangalore@gmail.com","JPS Contact Form",$msg, $headers);
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description">
+    <meta name="keywords">
+    <meta name="author">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="gtag/js?id=G-J9WT9P6WS3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J9WT9P6WS3');
+    </script>
+    <meta name="google-site-verification" content="6wfAMncnjfzHYI-IvtumC6ytvCGuZWbetVEWeEdW8iQ">
+    <!-- Page Title -->
+    <title>
+        Jain Public School
+    </title>
+    <!-- Favicon and Touch Icons -->
+    <link href="img/favicon.png" rel="shortcut icon" type="image/png">
+
+    <!-- Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/css-plugin-collections.css" rel="stylesheet">
+    <!-- CSS | menuzord megamenu skins -->
+    <link href="css/menuzord-skins/menuzord-rounded-boxed.css" rel="stylesheet">
+    <!-- CSS | Main style file -->
+    <link href="css/style-main.css" rel="stylesheet" type="text/css">
+    <!-- CSS | Preloader Styles -->
+    <link href="css/preloader.css" rel="stylesheet" type="text/css">
+    <!-- CSS | Custom Margin Padding Collection -->
+    <link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+    <!-- CSS | Responsive media queries -->
+    <link href="css/responsive6.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
+    <!-- <link href="css/style.css" rel="stylesheet" type="text/css" /> -->
+    <!-- Revolution Slider 5.x CSS settings -->
+    <link href="js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css">
+    <link href="js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css">
+    <link href="js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css">
+    <!-- CSS | Theme Color -->
+    <link href="css/viewbox.css" rel="stylesheet">
+    <link rel="stylesheet" href="releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="css/colors/theme-skin-color-set-1.css" rel="stylesheet" type="text/css">
+    <link href="css2?family=Oswald:wght@500&amp;display=swap" rel="stylesheet">
+    <!-- external javascripts -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- JS | jquery plugin collection for this theme -->
+    <script src="js/jquery-plugin-collection.js"></script>
+    <!-- Revolution Slider 5.x SCRIPTS -->
+    <script src="js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+    <script src="js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+
+    <script async="" defer="" src="en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/owl.theme.default.min.css" rel="stylesheet">
+
+    <style type="text/css">
+        .ajax__calendar_container {
+            z-index: 1000;
+        }
+
+        .Calendar .ajax__calendar_body {
+            width: 175px;
+            height: 139px;
+            /* modified */
+            position: relative;
+        }
+
+        .Calendar .ajax__calendar_day {
+            font-family: Tahoma, Calibri, sans-serif;
+            font-size: 10px;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 0px 0px 2px #D3D3D3;
+            text-align: center !important;
+            border: solid 1px #E0E0E0;
+            text-transform: uppercase;
+            margin: 1px;
+            width: 17px !important;
+            color: #9F9F9F;
+            height: 15px;
+            /* added */
+        }
+
+        .Calendar .ajax__calendar_year {
+            border: solid 1px #E0E0E0;
+            font-family: Tahoma, Calibri, sans-serif;
+            font-size: 10px;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 0px 0px 2px #D3D3D3;
+            text-align: center !important;
+            vertical-align: middle;
+            margin: 1px;
+            height: 40px;
+            /* added */
+        }
+
+        .Calendar .ajax__calendar_month {
+            border: solid 1px #E0E0E0;
+            font-family: Tahoma, Calibri, sans-serif;
+            font-size: 10px;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 0px 0px 2px #D3D3D3;
+            text-align: center !important;
+            vertical-align: middle;
+            margin: 1px;
+            height: 40px;
+            /* added */
+        }
+
+        .btn-transparent.btn-border {
+            background-color: transparent;
+            border-color: #eeeeee;
+            margin-bottom: 14px;
+        }
+
+        .pdlft {
+            padding-left: 2%;
+        }
+    </style>
+
+    <script>
+        $(window).on('load', function () {
+            $("#nav-opt7").addClass("active").delay("100");
+        });
+    </script>
+    <style>
+        .media-body p {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" name="form" action="contact-us-thanks.php" name="contactForm" id='contact_form'
+                                            onsubmit="myFunction()">
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+            value="/wEPDwULLTE1Mjg2ODA1NjBkZPYWSEwFxWMB2vuofPYFObxbPcxH">
+
+        <script
+            src="ScriptResource.axd?d=qlOvGZhmLPSfvz5Gdz0pipRN1KK4rc0pcPIKe5MTKI2G46VBtyoyCKUuZZUPKtza5OPGRgtDstIfK04GC4YnVZFtPtlW8oaktkGO2UgSvWX6yBl8_K4CZXng4BwiPww0H8pkvA2&amp;t=7f80639d"
+            type="text/javascript"></script>
+        <script type="text/javascript">
+            //<![CDATA[
+            if (typeof (Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+        </script>
+
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0829F5A3">
+        <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+            value="/wEdAAVDFtsYpCTtY9U5lSiJSPmZH7duLiiUMghN54x0SonEONVgp0zTfijUEQ8b/agIRHltLzjvQ7q721oE2OlEpl26Vg9CX6uxQVD98SCA9jX/RtY8B9WAGMOjNT7iOgLBiIXqVtPG">
+        <div id="wrapper" class="clearfix">
+            <!-- preloader -->
+
+            <!-- Header -->
+            <header id="header" class="header">
+                <div class="header-top bg-theme-color-2 sm-text-center">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-5">
+
+                            </div>
+                            <div class="col-md-7">
+                                <div class="widget no-border m-0 pull-right flip sm-pull-none sm-text-center pdlft">
+                                    <ul class="top-head" style="float: left;">
+                                        <li><a href="gallery.aspx.html">Gallery</a></li>
+                                        <li>|</li>
+                                        <li><a href="contact-us.aspx.html">Contact</a></li>
+                                        <li>|</li>
+                                        <li><a href="career.aspx.html">Careers</a></li>
+                                    </ul>
+                                    <a href="#" class="btn btn-border btn-transparent"
+                                        style="float: left; font-size: 14px;">Parent Login</a>
+
+                                    <ul
+                                        class="hidden-xs styled-icons icon-circled icon-sm flip sm-pull-none sm-text-center mt-sm-15">
+                                        <li><a href="https://www.facebook.com/jpsbangalore/"><i class="fa fa-facebook text-white"></i></a></li>
+                                        
+
+                                        <li><a href="https://www.youtube.com/channel/UCAm2fNw3RB8XxADbB0MKSPg" target="_blank"><i class="fa fa-youtube-play text-white"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-envelope text-white"></i></a></li>
+                                    </ul>
+                                    <div style="padding-top: 2px;">
+                                        <div class="input-group search-icn">
+                                            <input type="text" class="form-control" placeholder="Search"
+                                                style="border-radius: 4px 0 0 4px;">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" type="submit">
+                                                    <i class="glyphicon glyphicon-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-middle p-0 bg-lightest xs-text-center">
+                    <div class="container pt-0 pb-0">
+                        <div class="row">
+                            <div class="col-xs-5 col-sm-4 col-md-2">
+                                <div class="widget no-border m-0">
+                                    <a class="menuzord-brand pull-left flip xs-pull-center" href="Default.aspx.html">
+                                        <img src="logo%20%285%29.png" alt="" class="img-responsive" width="250"></a>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-1 col-sm-3 col-md-2">
+
+                            </div>
+                            <div class="col-xs-1 col-sm-4 col-md-3">
+
+                            </div>
+                            <div class="col-xs-1 col-sm-4 col-md-3">
+
+                            </div>
+                            <div class="col-md-2 col-xs-4">
+                                <div class="widget no-border m-0 logo2">
+                                    <img src="img/jgi-logo.png" alt="Logo" class="img-responsive" width="120"
+                                        style="float: right;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-nav">
+                    <div
+                        class="header-nav-wrapper navbar-scrolltofixed bg-theme-colored border-bottom-theme-color-2-1px">
+                        <div class="container-fluid">
+
+
+                            <div id="navbar">
+                                <nav id="navbar-main" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                            data-target="#navbar-collapse-1">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+
+                                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="Default.aspx.html">Home</a></li>
+
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b
+                                                        class="caret"></b></a>
+
+                                                <ul class="dropdown-menu">
+
+                                                    <li><a href="chairman.aspx.html">Chairman</a></li>
+                                                    <li><a href="director.aspx.html">Director</a></li>
+                                                    <li><a href="principal.aspx.html">Principal</a></li>
+
+                                                    <li><a href="student-council.aspx.html">Student Council </a></li>
+                                                    <li><a href="vision.aspx.html">Our Vision</a></li>
+                                                    <li><a href="mission.aspx.html">Our Mission</a></li><li><a href="hall-of-fame.aspx.html">Hall of Fame</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Academics <b
+                                                        class="caret"></b></a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="pre-primary.aspx.html">Pre Primary</a></li>
+                                                    <li><a href="primary-school.aspx.html">Primary School</a></li>
+                                                    <li><a href="middle-school.aspx.html">Middle School</a></li>
+
+
+                                                    <li><a href="secondary-school.aspx.html">Secondary School</a></li>
+
+                                                </ul>
+                                            </li>
+
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activities <b
+                                                        class="caret"></b></a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="co-curricular-activities.aspx.html">Co - curricular
+                                                            activities</a></li>
+                                                    <li><a href="houses.aspx.html">Houses</a></li>
+
+
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="facilities.aspx.html">Facilities </a>
+
+
+                                            </li>
+                                            <li class="dropdown">
+                                                <a href="life-at-jps.aspx.html">Life at JPS</a>
+
+                                            </li>
+                                            <li><a href="newsletter.aspx.html">Newsletter</a></li><li><a href="admission-process.aspx.html">Admission process</a></li>
+                                            <li><a href="faq.aspx.html">FAQs</a></li>
+                                            <li><a href="https://jpsbangalore.com/announcement.php" style="border-right: 0;">Announcements</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: none;"></div>
+                </div>
+            </header>
+
+
+
+            <div>
+
+
+                <!-- Start main-content -->
+                <div class="main-content">
+
+                    <section style="padding:0 !important;">
+                        <div class="container-fluid" style="padding:0 15px !important;">
+                            <div class="row">
+                                <img src="img/banner/4.jpg" class="img-responsive" alt="Alternate Text">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Divider: Contact -->
+                    <section class="divider">
+                        <div class="container">
+                            <div class="row pt-30">
+                                <div class="col-md-12">
+                                    <h2 class="text-theme-colored text-center"
+                                        style="margin-top: 0; margin-bottom: 20px;">Contact Details</h2>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="icon-box left media p-30 mb-20">
+                                                <a class="media-left pull-left" href="#"><i
+                                                        class="pe-7s-map-2 text-theme-colored"></i></a>
+                                                <div class="media-body">
+                                                    <h4>Our Address</h4>
+                                                    <p>#103, E Ashwathnarayan Layout, Puttenahalli, JP Nagar 7th Phase,
+                                                        Bangalore – 560078</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="icon-box left media p-30 mb-20">
+                                                <a class="media-left pull-left" href="#"><i
+                                                        class="pe-7s-call text-theme-colored"></i></a>
+                                                <div class="media-body">
+                                                    <h4>Our Contact Numbers</h4>
+                                                    <p><b>Landline:</b>
+                                                        <a href="tel:080-26632818">080-26632818</a><br />
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                                            href="tel:080-26630099">080-26630099</a>
+                                                        <br />
+                                                        <b>Mobile:</b>&nbsp;&nbsp;&nbsp;
+                                                        <a href="tel:7019287622">+91 7019287622</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="icon-box left media p-30 mb-20">
+                                                <a class="media-left pull-left" href="#"><i
+                                                        class="pe-7s-mail text-theme-colored"></i></a>
+                                                <div class="media-body">
+                                                    <h4>Our E-Mail</h4>
+                                                    <p><a
+                                                            href="mailto:contactjps.bangalore@gmail.com">contactjps.bangalore@gmail.com</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="icon-box left media p-30 mb-20">
+                                                <a class="media-left pull-left" href="#"><i
+                                                        class="pe-7s-mail text-theme-colored"></i></a>
+                                                <div class="media-body">
+                                                    <h4>Social Media</h4>
+                                                    <ul class="social-media">
+                                                        <li><a href="https://www.facebook.com/jpsbangalore/"
+                                                                target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                                        <li><a href="https://www.instagram.com/jainpublicschool24"><i class="fa fa-instagram"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-6 contact-us1">
+                                        <h3 class="line-bottom line-bottom1 mt-0 mb-20 text-center">Get in Touch With Us
+                                        </h3>
+                                              <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="name" class="form-control"
+                                                            placeholder="Enter Name" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="mobile" class="form-control"
+                                                            placeholder="Enter Phone Number" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" class="form-control"
+                                                            placeholder="Enter Email ID" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" rows="4" name="message" 
+                                                            placeholder="Enter Message"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group text-center">
+                                                        <button class="btn btn-primary btn-lg">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        <!-- Contact Form Validation-->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Divider: Google Map -->
+                    <section>
+                        <div class="container-fluid p-0">
+                            <div class="row">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15556.703232902439!2d77.578441!3d12.8964142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x80dde4f703825838!2sJain%20Public%20School!5e0!3m2!1sen!2sin!4v1647497090745!5m2!1sen!2sin"
+                                    width="100%" height="300" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- end main-content -->
+                <script>
+                    function SelectDate(e) {
+
+                        var PresentDay = new Date();
+
+                        var dateOfBirth = e.get_selectedDate();
+
+                        var months = (PresentDay.getMonth() - dateOfBirth.getMonth() + (12 * (PresentDay.getFullYear() - dateOfBirth.getFullYear())));
+                        var smonth = dateOfBirth.getMonth() + 1;
+                        var syear = dateOfBirth.getFullYear();
+
+
+
+                    }
+                </script>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$hpmailid" id="ContentPlaceHolder1_hpmailid">
+
+            </div>
+
+
+            <!-- Footer -->
+            <footer id="footer" class="footer divider bgimg layer-overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="widget dark">
+
+                                <h3 class="widget-title line-bottom-theme-colored-2" style="margin-bottom: 10px;">Jain
+                                    Public School</h3>
+
+                                <ul class="list-inline mt-5">
+                                    <li class="m-0 pl-10 pr-10"><i
+                                            class="fa fa-map-marker text-theme-color-2 mr-5"></i><a href="#"> #103, E
+                                            Ashwathnarayan Layout, Puttenahalli, JP Nagar 7th Phase, Bangalore –
+                                            560078</a> </li>
+                                    <li class="m-0 pl-10 pr-10"><i class="fa fa-phone text-theme-color-2 mr-5"></i> <a
+                                            href="tel:080-26632818">080-26632818</a>
+                                        <br>
+                                        <a href="tel:080-26630099">080-26630099</a>
+                                    </li>
+                                    <li class="m-0 pl-10 pr-10"><i
+                                            class="fa fa-envelope-o text-theme-color-2 mr-5"></i><a
+                                            href="mailto:contactjps.bangalore@gmail.com">contactjps.bangalore@gmail.com</a>
+                                    </li>
+                                </ul>
+                                <br>
+                                <ul class="styled-icons flat medium list-inline mb-40">
+                                    <li style="margin: 0; padding: 0;"><a href="#" style="margin: 0; padding: 0;"><i
+                                                class="fa fa-facebook"></i></a></li>
+                                    <li style="margin: 0; padding: 0;"><a href="#" style="margin: 0; padding: 0;"><i
+                                                class="fa fa-linkedin"></i></a></li>
+                                    <li style="margin: 0; padding: 0;"><a href="#" style="margin: 0; padding: 0;"><i
+                                                class="fa fa-instagram"></i></a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-2">
+                            <div class="widget dark">
+                                <h4 class="widget-title">Quick Links</h4>
+                                <ul class="list angle-double-right">
+                                    <li><a href="Default.aspx.html">Home</a></li>
+                                    <li><a href="about-jgi.aspx.html">About Us</a></li>
+                                    <li><a href="pre-primary.aspx.html">Academics</a></li>
+                                    <li><a href="co-curricular-activities.aspx.html">Activities</a></li>
+                                    <li><a href="facilities.aspx.html">Facilities</a></li>
+                                    <li><a href="life-at-jps.aspx.html">Life at JPS</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="widget dark">
+                                <h4 class="widget-title" style="color: transparent;">Quick Links</h4>
+                                <ul class="list angle-double-right">
+                                    <li><a href="newsletter.aspx.html">Newsletter</a></li><li><a href="admission-process.aspx.html">Admission process</a></li>
+                                    <li><a href="faq.aspx.html">FAQs</a></li>
+                                    <li><a href="#">Announcements</a></li>
+                                    <li><a href="gallery.aspx.html">Gallery</a></li>
+                                    <li><a href="career.aspx.html">Career</a></li>
+                                    <li><a href="mandatory-disclosures.aspx.html">Mandatory Disclosures</a></li>
+                                    <li><a href="contact-us.aspx.html">Contact Us</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-4">
+                            <div class="widget dark">
+                                <h4 class="widget-title line-bottom-theme-colored-2">Opening Hours</h4>
+                                <div class="opening-hours">
+                                    <ul class="list-border">
+                                        <li class="clearfix">
+                                            <span>School Timings :</span>
+                                            <div class="value pull-right">Monday-Friday : 8.30 AM - 3:00 PM </div>
+                                            <div class="value pull-right">Saturday : 8.30 AM - 1:00 PM </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <span>Office Timings :</span>
+                                            <div class="value pull-right">Monday – Friday : 8.30 AM – 4:00 PM </div>
+                                            <div class="value pull-right">Saturday : 8.30 AM - 2:00 PM </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <span>Sunday : </span>
+                                            <div class="value pull-right">Closed </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="footer-bottom" style="background-color: #0d13219e;">
+                    <div class="container pt-10 pb-10">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="font-14 text-black-777 m-0" style="text-align: center;">Copyright &copy;2024
+                                    All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+        </div>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-login">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="avatar">
+                            <img src="images/favicon.png" alt="Avatar">
+                        </div>
+                        <h4 class="modal-title">Login</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+
+
+                        <div id="up1">
+
+                            <div class="form-group">
+                                <input name="ctl00$txtusername" type="text" id="txtusername" class="form-control"
+                                    placeholder="User Name">
+
+                            </div>
+                            <div class="form-group">
+                                <input name="ctl00$txtpassword" type="text" id="txtpassword" class="form-control"
+                                    placeholder="Password">
+
+
+
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+
+
+                                    <input type="submit" name="ctl00$btnchklogin" value="Sign In"
+                                        onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$btnchklogin&quot;, &quot;&quot;, true, &quot;loginuser&quot;, &quot;&quot;, false, false))"
+                                        id="btnchklogin" class="btn btn-primary btn-lg btn-block login-btn">
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    <!-- end wrapper -->
+    <!-- Footer Scripts -->
+    <!-- JS | Custom script for all pages -->
+    <script src="js/custom.js"></script>
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+         (Load Extensions only on Local File Systems ! 
+          The following part can be removed on Server for On Demand Loading) -->
+    <script type="text/javascript"
+        src="js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript"
+        src="js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript"
+        src="js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript"
+        src="js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript"
+        src="js/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript"
+        src="js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript"
+        src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript"
+        src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="npm/popper.js%401.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="gh/google/code-prettify%40master/loader/run_prettify.js"></script>
+
+
+    <script src="js/jquery.viewbox.js"></script>
+    <script>
+        $(function () {
+
+            $('.thumbnail').viewbox();
+            $('.thumbnail-2').viewbox({ fullscreenButton: true });
+
+            (function () {
+                var vb = $('.popup-link').viewbox();
+                $('.popup-open-button').click(function () {
+                    vb.trigger('viewbox.open');
+                });
+                $('.close-button').click(function () {
+                    vb.trigger('viewbox.close');
+                });
+            })();
+
+        });
+    </script>
+
+    <script>
+        //$(document).ready(function (a) {
+        //    a(".menuzord-menu li a").each(function () {
+        //         if (a(this).attr("id") == "" || a(this).attr("id") == "") {
+        //             a(this).addClass("active")
+        //         }
+        //    })
+        // });
+        //$('.menuzord-menu li').click(function () {
+        //    if ($(this).hasClass('active')) {
+        //        $(this).removeClass('active');
+        //    } else {
+        //        $('li a.current').removeClass('active');
+        //        $(this).addClass('active');
+        //    }
+        //});
+
+
+        $(document).ready(function () {
+            var username = '';
+            //$("#nav-opt7").css("display", "block");
+            if (username != "") {
+                $("#nav-opt6").css("display", "block");
+                $("#nav-opt7").css("display", "none");
+            }
+            else {
+                $("#nav-opt6").css("display", "none");
+                $("#nav-opt7").css("display", "block");
+            }
+        });
+
+
+
+    </script>
+    <script>
+        /*! Main */
+        jQuery(document).ready(function ($) {
+
+            // Fixa navbar ao ultrapassa-lo
+            var navbar = $('#navbar-main'),
+                distance = navbar.offset().top,
+                $window = $(window);
+
+            $window.scroll(function () {
+                if ($window.scrollTop() >= distance) {
+                    navbar.removeClass('navbar-fixed-top').addClass('navbar-fixed-top');
+                    $("body").css("padding-top", "70px");
+                } else {
+                    navbar.removeClass('navbar-fixed-top');
+                    $("body").css("padding-top", "0px");
+                }
+            });
+        });
+    </script>
+
+
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
+    </script>
+    <script>
+        function myFunction() {
+            alert("Thank You. Our executive will call you shortly");
+        }
+    </script>
+</body>
+
+</html>
