@@ -1,0 +1,190 @@
+.hmaboutus .text-gray{
+    margin-bottom: 0;
+}
+.hmaboutus .timeing {
+    font-size: 14px;
+}
+.mb-0{margin-bottom: 0;}
+.playares .section-content {
+    padding-top: 60px !important;
+}
+/*.co-curricular-activities .row {
+    margin-bottom: 60px !important;
+}*/
+.co-curricular-activities .row ul{list-style-type: disc;padding-left: 20px;}
+    .co-curricular-activities .row ul li{line-height: 28px;}
+.admins b{font-weight: 600;}
+.footer-bottom{opacity: 0.8;}
+    .footer-bottom li, .footer-bottom a{
+        opacity: 0.9!important;
+    }
+section ul li {
+    padding-bottom: 7px;
+}
+.section-title ul > li {
+    padding-bottom: 6px;
+}
+.kindergarten .panel-group .panel-title a::after {
+    display: none;
+}
+/*.kindergarten .panel-title {
+    width: fit-content;
+}*/
+
+.kindergarten .panel-group .panel-title a.active, .kindergarten .panel-group .panel-title a {
+    background-color: transparent !important;
+    color: #333 !important;
+    font-size: 26px !important;
+    border: none !important;
+    padding: 0 !important;
+    width: fit-content!important;
+}
+.kindergarten .panel-group .panel-title a{padding: 0;}
+.kindergarten .panel-group .panel-content {
+    border: none !important;
+    padding: 0 !important;
+}
+.overlay {
+    position: absolute;
+    visibility: visible;
+    left: 12%;
+    top: 25%;
+    /* z-index: 7; */
+    background: #02468d;
+    bottom: 25%;
+    /* right: 0; */
+    width: 55%;
+    margin: 0 auto;
+    min-width: 300px;
+    border-radius: 10px;
+    opacity: 0.6;
+}
+.breadcrumb > li > a {
+    color: #000;
+}
+.inner-header.parallax {
+    /*background-position: 33% 20%;*/
+    background-position: 33% 20%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+.hmblog .post .entry-title a{
+    font-weight: bold;
+}
+.hmblog .post .entry-content {
+    background: #f5f5f5;
+}
+
+.reservation-form .nameprefix {
+    display: inline-flex !important;
+}
+
+
+#reservation_form #prefx .form-control, #reservation_form #reservation_name1 .form-control {
+    display: inline-block;
+    width: 45%;
+}
+input[type=date].form-control {
+    padding: 10px 10px!important;
+}
+.modal-login {
+    color: #636363;
+    width: 350px;
+}
+.trigger-btn {
+    display: table-cell!important;
+}
+.modal-login .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+    .modal-login .modal-header {
+        border-bottom: none;
+        position: relative;
+        justify-content: center;
+    }
+
+    .modal-login h4 {
+        text-align: center;
+        font-size: 26px;
+        margin: 30px 0 -15px;
+    }
+
+    .modal-login .form-control:focus {
+        border-color: #70c5c0;
+    }
+
+    .modal-login .form-control, .modal-login .btn {
+        min-height: 40px;
+        border-radius: 3px;
+    }
+
+.modal-login .close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: #F0640C;
+    opacity: 0.8;
+}
+
+    .modal-login .modal-footer {
+        background: #ecf0f1;
+        border-color: #dee4e7;
+        text-align: center;
+        justify-content: center;
+        margin: 0 -20px -20px;
+        border-radius: 5px;
+        font-size: 13px;
+    }
+
+        .modal-login .modal-footer a {
+            color: #999;
+        }
+
+    .modal-login .avatar {
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: -70px;
+        width: 95px;
+        height: 95px;
+        border-radius: 50%;
+        z-index: 9;
+        background: #fffbfb;
+        padding: 15px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+        .modal-login .avatar img {
+            width: 100%;
+        }
+
+    .modal-login.modal-dialog {
+        margin-top: 80px;
+    }
+
+.modal-login .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #F0640C;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border: none;
+}
+
+    .modal-login .btn:hover, .modal-login .btn:focus {
+        background: #05060a;
+        color: #fff;
+        outline: none;
+    }
+
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}
+.prefix{width: 30%;}
+#ContentPlaceHolder1_ddlItem{width: 40%!important;}
